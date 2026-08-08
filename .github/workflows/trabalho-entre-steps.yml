@@ -1,4 +1,4 @@
-name: Primeiro Workflow Linuxtips
+name: Trabalho entre steps
 
 on:
     push:
@@ -6,7 +6,7 @@ on:
         - main
     
 jobs:
-    giropops: 
+    entre-steps: 
       runs-on: ubuntu-latest
       steps:
         - name: Confere vesao do Ubuntu
