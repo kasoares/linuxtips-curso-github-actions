@@ -1,0 +1,35 @@
+name: Trabalho entre jobs
+
+on:
+    push:
+      branches: 
+        - main
+    
+jobs:
+    job_1: 
+      runs-on: ubuntu-latest
+      steps:
+        - name: Confere vesao do Ubuntu
+          run: cat /etc/os-release
+
+        - name: Exibir uma mensagem
+          run: echo "Estou fazendo o curso de github Actions da Linuxtips" > /home/ubuntu/mensagem.txt
+    
+        - uses: actions/upload-artifact@v4
+          with:
+            name: strigus
+            path: /home/ubuntu/mensagem.txt
+
+    job_2:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/download-artifact@v4
+          with:
+            name: strigus
+            path: mensagem.txt
+
+        - name: Ver o conteudo do diretorio
+          run: ls -lha
+        
+        - name: lê conteudo do arquivo
+          run: cat strigus/mensagem.txt
