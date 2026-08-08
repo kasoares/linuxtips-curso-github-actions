@@ -1,9 +1,7 @@
 name: Trabalho entre steps
 
 on:
-    push:
-      branches: 
-        - main
+   workflow_dispatch
     
 jobs:
     entre-steps: 
