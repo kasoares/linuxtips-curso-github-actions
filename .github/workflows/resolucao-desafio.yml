@@ -20,7 +20,7 @@ jobs:
               username: ${{ secrets.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_PASSWORD }}
             
-              - name: Checkout
+            - name: Checkout
               uses: actions/checkout@v4
 
             - name: Baixa a imagem do container
