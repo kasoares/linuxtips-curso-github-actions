@@ -1,10 +1,10 @@
 name: validacao de imagens de container
 
 on:
-   workflow_dispatch
+   workflow_dispatch:
       inputs:
          validaImagemDocker:
-             decription: 'Validação de iamgem escolhida pelo usuário'
+             description: 'Validação de iamgem escolhida pelo usuário'
              required: false
              default: 'nginx:latest'
              type: string
@@ -24,7 +24,7 @@ jobs:
 
             - name: Leitura da imagem
               run: |
-                IMAGE_NAME=$(echo "${{github.event.inputs.validaImagemDocker}}" | cut -d ':' -f)
+                IMAGE_NAME=$(echo "${{github.event.inputs.validaImagemDocker}}" | cut -d ':' -f1)
                 docker images | grep $IMAGE_NAME
 
             - name: Scan com scout
