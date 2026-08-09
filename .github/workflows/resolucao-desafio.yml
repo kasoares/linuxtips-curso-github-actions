@@ -35,5 +35,6 @@ jobs:
             - name: Scan com scout
               uses: docker/scout-action@v1
               with:
+                command: cves,recommendations, compare
                 image: ${{github.event.inputs.validaImagemDocker}}
                 only-severities: critical,high
