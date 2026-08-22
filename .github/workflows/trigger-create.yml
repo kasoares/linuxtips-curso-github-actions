@@ -1,0 +1,12 @@
+name: branch protection rule workflow
+
+on:
+  create
+
+jobs:
+  print-branch-or-tag-creation:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Avisa sobre criação de branch ou tag
+        run: echo "Este workflow foi triggado pois uma branch ou tag foi criada no repositório"
