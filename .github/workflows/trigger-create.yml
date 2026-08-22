@@ -1,4 +1,4 @@
-name: branch protection rule workflow
+name: testando trigger do tipo create
 
 on:
   create
