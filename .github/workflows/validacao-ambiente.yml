@@ -1,0 +1,15 @@
+name: Valida ambiente 
+
+on:
+  workflow_dispatch
+  
+jobs:
+  valida-ambiente:
+    runs-on: ubuntu-latest
+    steps:
+      - name: validacao de ambiente
+        run: echo "Validando ambiente"
+
+  chama-build-e-testes:
+    needs: valida-ambiente
+    uses: ./.github/workflows/build-e-testes.yml
