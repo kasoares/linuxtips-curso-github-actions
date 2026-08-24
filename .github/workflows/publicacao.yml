@@ -2,7 +2,7 @@ name: Publicacao
 
 on:
   workflow_run:
-    workflows: ["build-e-teste"]
+    workflows: ["build-e-testes"]
     types:
       - completed
 
