@@ -12,3 +12,7 @@ jobs:
 
       - name: testa o artefato
         run: echo "testando artefato"
+      
+  publicacao:
+    needs: build-e-teste
+    uses: ./.github/workflows/publicacao.yml
