@@ -2,7 +2,7 @@ name: Publicacao
 
 on:
   workflow_run:
-    workflows: ["builda e testa app"]
+    workflows: ["build-e-teste"]
     types:
       - completed
 
