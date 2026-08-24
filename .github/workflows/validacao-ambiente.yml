@@ -12,4 +12,4 @@ jobs:
 
   chama-build-e-testes:
     needs: valida-ambiente
-    uses: ./.github/workflows/build-e-testes.yml
+    uses: .github/workflows/build-e-testes.yml
