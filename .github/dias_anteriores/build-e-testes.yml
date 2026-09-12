@@ -1,0 +1,18 @@
+name: builda e testa app
+
+on: 
+  workflow_call
+
+jobs: 
+  build-e-teste:
+    runs-on: ubuntu-latest
+    steps:
+      - name: builda o ambiente
+        run: echo "buildando ambiente"
+
+      - name: testa o artefato
+        run: echo "testando artefato"
+      
+  publicacao:
+    needs: build-e-teste
+    uses: ./.github/workflows/publicacao.yml
